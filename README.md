@@ -32,3 +32,7 @@ the running userspace (including PID 1) with a different one.
 - Disable kernel watchdog timer
 - Figure out a way to load a custom kernel
   - kexec fails
+
+
+### Special thanks
+- [grawity](https://github.com/grawity): `handoff` idea, debugging
