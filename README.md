@@ -45,7 +45,7 @@ the running userspace (including PID 1) with a different one.
 ## Todo
 - Figure out a way to load a custom kernel
   - kexec fails
-
+- Maybe open a fd to /sbin/init in `handoff` before mounting it, saves us from copying it to tmpfs
 
 ### Special thanks
 - [grawity](https://github.com/grawity): `handoff` idea, debugging
