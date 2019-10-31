@@ -1,0 +1,5 @@
+#!/bin/env sh
+
+cp /sbin/init /tmp/telinit
+mount --bind /tmp/archlinux-steamlink/init-trampoline /sbin/init
+/tmp/telinit u

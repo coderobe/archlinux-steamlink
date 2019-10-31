@@ -1,0 +1,11 @@
+#!/bin/env sh
+
+# reset boot failure counter
+fts-set steamlink.crashcounter 0
+
+# set up handoff
+mkdir -p /tmp/archlinux-steamlink
+mount /dev/block/sda1 /tmp/archlinux-steamlink
+
+# handoff
+/tmp/archlinux-steamlink/handoff

@@ -1,0 +1,29 @@
+#!/bin/env sh
+
+cd /tmp/archlinux-steamlink
+
+# TODO: figure out why this does not work
+#       currently, it will cause the steamlink to panic (i think...)
+#
+#pids=$(pgrep . | tac)
+#watchdog=$(pgrep watchdog)
+#
+#for pid in $pids
+#  do if [ $pid -ne 1 ] && [ $pid -ne $watchdog ]
+#    then kill -9 $pid
+#  fi
+#done
+
+mkdir -p old-root
+pivot_root . old-root
+chroot .
+
+mount --bind /old-root/dev /dev
+mount tmpfs -t tmpfs /run
+mount tmpfs -t tmpfs /tmp
+touch /dev/sda
+touch /dev/sda1
+mount --bind /dev/block/sda /dev/sda
+mount --bind /dev/block/sda1 /dev/sda1
+
+exec lib/systemd/systemd --log-target=kmsg --log-level=info
