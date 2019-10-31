@@ -26,4 +26,6 @@ touch /dev/sda1
 mount --bind /dev/block/sda /dev/sda
 mount --bind /dev/block/sda1 /dev/sda1
 
+ln -s /old-root/lib/modules/*-mrvl /lib/modules/ || true
+
 exec lib/systemd/systemd --log-target=kmsg --log-level=info
