@@ -10,6 +10,17 @@ and a Marvell ARMv7 CPU (1 Core, 1 Thread) (`MV88DE3108`).
 - Ethernet connectivity to the Steam Link
 - A USB Stick
 
+### Build requirements
+- `bsdtar`
+- `curl`
+- `sudo`
+- `e2fsprogs`
+
+## Preparing the USB
+- partition the USB to one big partition
+- `sudo mkfs.ext4 /dev/sdXY`
+- `sudo tune2fs -O ^has_journal /dev/sdXY` - disable journaling (no kernel support)
+
 ## Working
 - Full userspace replacement
 - Handoff to systemd
