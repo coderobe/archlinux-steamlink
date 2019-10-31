@@ -40,7 +40,6 @@ the running userspace (including PID 1) with a different one.
   - execs `lib/systemd/systemd` to hand off PID 1 to systemd
 
 ## Todo
-- Disable kernel watchdog timer
 - Figure out a way to load a custom kernel
   - kexec fails
 
