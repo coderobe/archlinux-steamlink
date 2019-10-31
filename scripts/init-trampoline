@@ -2,18 +2,6 @@
 
 cd /tmp/archlinux-steamlink
 
-# TODO: figure out why this does not work
-#       currently, it will cause the steamlink to panic (i think...)
-#
-#pids=$(pgrep . | tac)
-#watchdog=$(pgrep watchdog)
-#
-#for pid in $pids
-#  do if [ $pid -ne 1 ] && [ $pid -ne $watchdog ]
-#    then kill -9 $pid
-#  fi
-#done
-
 mkdir -p old-root
 pivot_root . old-root
 chroot .
