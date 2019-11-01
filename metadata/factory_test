@@ -8,4 +8,4 @@ mkdir -p /tmp/archlinux-steamlink
 mount /dev/block/sda1 /tmp/archlinux-steamlink
 
 # handoff
-/tmp/archlinux-steamlink/handoff
+exec /tmp/archlinux-steamlink/handoff
