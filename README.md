@@ -29,8 +29,10 @@ This repository explores alternative methods.
 - Handoff to systemd
 
 ## Technical explanation
-Two scripts - `init-trampoline` and `handoff` - work together to replace
+Three scripts - `factory_test`, `init-trampoline` and `handoff` - work together to replace
 the running userspace (including PID 1) with a different one.  
+- `factory_test`:
+  - convince steam link that it is being QA/QC'd, and make it exec `handoff`
 - `handoff`:
   - creates a copy of `/sbin/init` in a tmpfs
   - masks `/sbin/init`, overlaying `init-trampoline`
