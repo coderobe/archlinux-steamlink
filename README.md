@@ -45,9 +45,10 @@ the running userspace (including PID 1) with a different one.
   - execs `lib/systemd/systemd` to hand off PID 1 to systemd
 
 ## Todo
-- Figure out a way to load a custom kernel
-  - kexec fails
 - Maybe open a fd to /sbin/init in `handoff` before mounting it, saves us from copying it to tmpfs
+- A patched kexec works **with limitations**
+  - Restructure repo into two methods: trampoline/kexec
+  - Potentially submit patched kconfig to archlinux arm upstream, or provide unofficial builds
 
 ### Special thanks
 - [grawity](https://github.com/grawity): `handoff` idea, debugging
